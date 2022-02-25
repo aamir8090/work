@@ -14,7 +14,7 @@
       crossorigin="anonymous"
     />
     <title>WERKCONNECT</title>
-    <link rel="stylesheet" href="{% static 'css/style.css'%}" />
+    <link rel="stylesheet" href="{% static 'css/style.css' %}" />
   </head>
   <body>
     <nav class="navbar navbar-light bg-primary navinfo">
@@ -35,7 +35,7 @@
           085-0100101
         </span>
         <span class="navbar-text text-white mx-4">
-          <svg
+          <a href="" class="text-white text-decoration-none"> <svg
             xmlns="http://www.w3.org/2000/svg"
             width="16"
             height="16"
@@ -46,8 +46,7 @@
             <path
               d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4Zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2Zm13 2.383-4.708 2.825L15 11.105V5.383Zm-.034 6.876-5.64-3.471L8 9.583l-1.326-.795-5.64 3.47A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.741ZM1 11.105l4.708-2.897L1 5.383v5.722Z"
             />
-          </svg>
-          info@workconnect.nl
+          </svg> info@workconnect.nl</a>
         </span>
       </div>
     </nav>
@@ -73,7 +72,7 @@
               <a
                 class="nav-link text-white"
                 aria-current="page"
-                href="{% url 'home' %}"
+                href="home.html"
                 >Home</a
               >
             </li>
@@ -82,66 +81,151 @@
               <a
                 class="nav-link text-white"
                 aria-current="page"
-                href="{% url 'aanmelden' %}"
+                href="aanmelden.html"
                 >Aanmelden</a
               >
             </li>
             <li class="nav-item ms-3">
-              <a class="nav-link text-white" href="{% url 'overons' %}">Over Ons</a>
+              <a class="nav-link text-white" href="overons.html">Over Ons</a>
             </li>
             <li class="nav-item ms-3">
-              <a class="nav-link text-white" href="{% url 'contact' %}">Contact</a>
+              <a class="nav-link text-white" href="contact.html">Contact</a>
             </li>
             <li class="nav-item ms-3">
-              <a class="nav-link text-white" href="{% url 'login' %}">Login</a>
+              <a class="nav-link text-white" href="login.html">Login</a>
             </li>
           </ul>
         </div>
       </div>
     </nav>
     <div class="container-fluid">
-        <div class="row bg-dark p-5 text-white" style="opacity: .6;">
+      <div class="row contact">
+        <div class="col-lg-4 bg-dark  text-white py-3 ps-5">
+          <h2>Contact</h2>
+          <h5>Voor als je er zelf niet uit komt</h5>
+        </div>
+
+      </div>
+      <div class="row justify-content-center px-5 pb-5 my-5">
+        <h1 class="py-5">Particulier</h1>
+        <div class="col-md-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+          </svg>
+          <h3 class="py-2">Telefoon</h3>
+          <p>Wij zijn bereikbaar op werkdagen van 9.00 tot 18.00 uur en op zaterdag van 9.00 tot 13.00 uur. Je betaalt alleen je gebruikelijke belkosten.</p>
+          <p><strong>Let op:</strong> hier vind je meer informatie over de stijgende tarieven en wat dat voor jouw contract betekent. Je hoeft meestal niets te doen. Toch een vraag? Chat met ons. </p>
+          <button type="button" class="btn btn-light border border-primary">Bel 78949783456</button>
+        </div>
+        <div class="col-md-6">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-share-fill" viewBox="0 0 16 16">
+            <path d="M11 2.5a2.5 2.5 0 1 1 .603 1.628l-6.718 3.12a2.499 2.499 0 0 1 0 1.504l6.718 3.12a2.5 2.5 0 1 1-.488.876l-6.718-3.12a2.5 2.5 0 1 1 0-3.256l6.718-3.12A2.5 2.5 0 0 1 11 2.5z"/>
+          </svg>
+          <h3 class="py-2">Contact via social media</h3>
+          <p>We zitten op werkdagen van 8.00 - 20.00 uur en op zaterdag van 9.00 - 13.00 uur voor je klaar op Facebook en twitter.</p>
+          <p><strong>Let op:</strong> het is druk en daardoor duurt het langer voor je antwoord krijgt. Lees de informatie over de stijgende tarieven en wat dat voor jouw contract betekent. Je hoeft meestal niets te doen. Toch een vraag? Chat met ons.</p>
+          <button type="button" class="btn btn-light border border-primary">Naar Facebook</button><br>
+          <button type="button" class="btn btn-light border border-primary mt-4">Naar Twitter</button>
+        </div>
+      </div>
+      <div class="row justify-content-center pb-5 mt-5">
+        <h1 class="text-center py-5">Veelgestelde vragen</h1>
+        <div class="col-md-9">
+          <div class="accordion" id="accordionExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingOne">
+                <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                  <h5>OP WELKE MOMENTEN MAG JE STARTEN?</h5>
+                </button>
+              </h2>
+              <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Elk moment!</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingTwo">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                  <h5>WAT MOET IK AANLEVEREN VANUIT DE OUDE BOEKHOUDER?</h5>
+                </button>
+              </h2>
+              <div id="collapseTwo" class="accordion-collapse collapse" aria-labelledby="headingTwo" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>dit moet in overleg</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                  <h5>ZIT IK VAST AAN EEN CONTRACT?</h5>
+                </button>
+              </h2>
+              <div id="collapseThree" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Nee het is maandelijks opzegbaar</strong>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="headingThree">
+                <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                  <h5>WELKE BETAALMOGELIJKHEDEN ZIJN ER?</h5>
+                </button>
+              </h2>
+              <div id="collapseFour" class="accordion-collapse collapse" aria-labelledby="headingThree" data-bs-parent="#accordionExample">
+                <div class="accordion-body">
+                  <strong>Per maand/per kwartaal/per jaar en iDeal of automatische incasso</strong>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row  p-5">
+        <div class="col-4">
+          <h1>Algemene gegevens</h1>
+          <h4>Kvk-nummer: 13 04 16 11</h4>
+          <h4>Btw-nummer: NL807370447B01</h4>
+        </div>
+      </div>
+        <!-- <div class="row bg-dark p-5 text-white" style="opacity: .6;">
             <h2>Neem contact met ons op</h2>
             <p>Bereikbaar op werkdagen van 9:00 uur tot 17:00 uur</p>
-        </div>
-      <div class="row bg-primary justify-content-around py-5">
+        </div> -->
+      <!-- <div class="row bg-primary justify-content-around py-5">
         <div class="col-lg-4 text-dark bg-white rounded">
           <h2 class="my-4 text-center">Contact Ons</h2>
-          <ul class="messages">
-				{% for msg in messages %}
-
-				<li>
-					<div class="alert alert-{{msg.level_tag}}" role="alert">
-						{{msg.message}}
-					</div>
-
-				</li>
-			{% endfor %}
-			</ul>
-          <form action="{% url 'adduser' %}" method="post">
-				{% csrf_token %}
           <div class="mb-4">
-            <label class="form-label">Je naam</label>
-            {{form.name}}
+            <label for="examplename" class="form-label">Je naam</label>
+            <input type="text" class="form-control" id="examplename" />
           </div>
           <div class="mb-4">
-            <label class="form-label"
+            <label for="exampleFormControlInput1" class="form-label"
               >Je e-mailadres</label
             >
-            {{form.email}}
+            <input
+              type="email"
+              class="form-control"
+              id="exampleFormControlInput1"
+            />
           </div>
           <div class="mb-4">
-            <label class="form-label">Onderwerp</label>
-            {{form.subject}}
+            <label for="exampletopic" class="form-label">Onderwerp</label>
+            <input type="text" class="form-control" id="exampletopic" />
           </div>
           <div class="mb-4">
-            <label class="form-label"
+            <label for="exampleFormControlTextarea1" class="form-label"
               >Je bericht (optioneel)</label
             >
-            {{form.message}}
+            <textarea
+              class="form-control"
+              id="exampleFormControlTextarea1"
+              rows="3"
+            ></textarea>
           </div>
-          <button type="submit" class="btn btn-warning ">Verzenden</button>
-          </form>
+          <button type="button" class="btn btn-warning ">Verzenden</button>
         </div>
         <div class="col-lg-4 colpostion">
             <div class="row bg-white rounded">
@@ -168,6 +252,21 @@
                     </p>
                 </div>
             </div>
+        </div>
+      </div> -->
+      <div class="row bg-dark justify-content-center text-white py-4">
+        <div class="col-md-3">
+          <img src="{% static 'images/werkconnect.jpeg' %}" class="img-fluid" width="200" alt="">
+          <!-- <h2>Workconnect</h2> -->
+        </div>
+        <div class="col-md-3  text-white">
+          <h5>Adress</h5>
+          <p class="">Utrecht, Utrecht</p>
+        </div>
+        <div class="col-md-3">
+          <h5>Contact</h5>
+          <p>info@workconnect.nl</p>
+          <p>085-0100101</p>
         </div>
       </div>
       <div class="row pt-3 fw-bold text-center">

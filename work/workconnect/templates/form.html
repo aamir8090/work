@@ -1,0 +1,166 @@
+<!doctype html>
+ {% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+    <link rel="stylesheet" href="{% static 'css/stylei.css' %}">
+    <title>form</title>
+  </head>
+  <body>
+      <div class="cotainer">
+          <div class="row justify-content-center">
+              <div class="col-5">
+                <div class="progress my-5">
+                    <div class="progress-bar progress-bar-striped active" role="progressbar" aria-valuemin="0" aria-valuemax="100"></div>
+                </div>
+
+                <form id="multistepform" novalidate action="/form"  method="post">
+                   {% csrf_token %}
+                    <fieldset>
+                    <h2>Step 1 - 6</h2>
+                    <h4 class="text-primary">Hoe kunnen vakmensen contact met je opnemen?</h4>
+                    <p>Deze gegevens zijn niet zichtbaar voor vakmannen, totdat jij besluit met ze in contact te komen.</p>
+                    <div class="form-group">
+                    <label for="email">Email address</label>
+                    <input type="email" class="form-control" id="email" name="email" placeholder="Email">
+                  </div>
+                    <input type="next" name="" class="next btn btn-primary" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2> Step 2 - 6 </h2>
+                    <h4 class="text-primary">What is je klus?</h4>
+                    <p>Vind de dienst die je nodig hebt om in contact te komen met geverifieerde en beeordeelde vakmannen in de buurt.</p>
+                    <div class="form-group">
+                    <input type="text" class="form-control" name="text" id="fName" placeholder="Bijvoorbeeld schilderwerk">
+                  </div>
+                    <input type="button" name="previous" class="previous btn btn-danger" value="Previous" />
+                    <input type="" name="next" class="next btn btn-primary" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2> Step 3 - 6 </h2>
+                    <h4 class="text-primary">What is de lacatie van je klus?</h4>
+                    <div class="form-group">
+                    <input type="text" class="form-control" name="toxt"  placeholder="3524 ZR | Utrecht">
+                  </div>
+                    <input type="button" name="previous" class="previous btn btn-danger" value="Previous" />
+                    <input type="" name="next" class="next btn btn-primary" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2> Step 4 - 6 </h2>
+                    <h4 class="text-primary">Waneer moet de klus worden uitgevoerd?(optioneel)</h4>
+                    <div class="row my-2">
+                        <div class="col-11 d-inline bg-light">
+                          <label class="form-check-label" for="flexRadioDefault1">
+                            Met Spoed
+                          </label>
+                        </div>
+                        <div class="col-1">
+                            <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault1"
+                          />
+                        </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-11 bg-light">
+                          <label class="form-check-label" for="flexRadioDefault2">
+                            In overieg
+                          </label>
+                        </div>
+                        <div class="col-1">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault2"
+                          />
+                        </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-11 bg-light">
+                          <label class="form-check-label" for="flexRadioDefault3">
+                            Binnen 2 weken
+                          </label>
+                        </div>
+                        <div class="col-1">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault3"
+                          />
+                        </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-11 bg-light">
+                          <label class="form-check-label" for="flexRadioDefault4">
+                            Binnen een maand
+                          </label>
+                        </div>
+                        <div class="col-1">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault4"
+                          />
+                        </div>
+                      </div>
+                      <div class="row my-2">
+                        <div class="col-11 bg-light">
+                          <label class="form-check-label" for="flexRadioDefault5">
+                            Binnen een paar maanden
+                          </label>
+                        </div>
+                        <div class="col-1">
+                          <input
+                            class="form-check-input"
+                            type="radio"
+                            name="flexRadioDefault"
+                            id="flexRadioDefault5"
+                          />
+                        </div>
+                      </div>
+                    <input type="button" name="previous" class="previous btn btn-danger" value="Previous" />
+                    <input type="button" name="next" class="next btn btn-primary" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2> Step 5 - 6 </h2>
+                    <h4 class="text-primary">Voeg foto's of tekeningen toe(optioneel)</h4>
+                    <p>
+                        Door foto's toe te voegen, krijgen vakmensen een beter beeld van
+                        jee klus en kunnen ze een beter voor MB bestenden.
+                      </p>
+                    <div class="form-group">
+                    <input type="file" class="form-control" name="file">
+                  </div>
+                    <input type="button" name="previous" class="previous btn btn-danger" value="Previous" />
+                    <input type="" name="next" class="next btn btn-primary" value="Next" />
+                </fieldset>
+                <fieldset>
+                    <h2>Step 6 - 6</h2>
+                    <h4 class="text-primary">Aanvullende informatie(optioneel)</h4>
+                  <div class="form-group">
+                    <label for="address">Address</label>
+                    <textarea  class="form-control" name="tuxt" placeholder="Bijvoorbeeld afmitengen, toegankelijkheid van de woning en andere belangrijke info die je wilt delen met de vakman."></textarea>
+                  </div>
+                    <input type="button" name="previous" class="previous btn btn-danger" value="Previous" />
+                    <input type="submit" name="submit" class="submit btn btn-success" value="Submit" id="submit_data" />
+                </fieldset>
+                </form>
+              </div>
+          </div>
+      </div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+    <script src="{% static 'js/maini.js' %}"></script>
+  </body>
+</html>

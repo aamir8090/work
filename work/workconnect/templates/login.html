@@ -109,122 +109,58 @@
                           <hr id="indecator">
                         </div>
                         <div class="col-md-6">
-                          <button class="btn" onclick="reg()"><h2>Registraion</h2></button>
+                          <a href="business" class="btn" onclick="reg()"><h2>Registraion</h2></a>
                         </div>
                       </div>   
                     </div>
                 </div>
-                <div class="form-container">
-                  <div class="row justify-content-center pb-5" id="loginform">
-                    <div class="col-md-6 pb-3">
-                      <form>
-                        <div class="mb-3">
-                            <label for="email" class="form-label">Email</label>
-                            <input type="email" class="form-control" name="email" id="email">
-                          </div>
-                          <div class="mb-3">
-                            <label for="password" class="form-label">Password</label>
-                            <input type="text" class="form-control" id="password">
-                          </div>
-                          <div class="mb-3 form-check">
-                            <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                            <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                          </div>
-                        <div class="">
-                            <button type="submit" name="submit" class="btn btn-success my-1">Log In</button>
-                            <a href="" class="text-decoration-none">Forgot Password?</a>
-                        </div>
-                    </form>
+
+    {% block content %}
+
+
+    <div class="global-container">
+        <div class="card login-form">
+        <div class="card-body">
+            <h3 class="card-title text-center">Login Page</h3>
+            {% if messages %}
+
+            {% for message in messages %}
+            <div class="alert alert-info">
+                {{ message }}
+            </div>
+            {% endfor %}
+
+        {% endif %}
+            <div class="card-text">
+                <!--
+                <div class="alert alert-danger alert-dismissible fade show" role="alert">Incorrect username or password.</div> -->
+                <form method="post" >
+                    {% csrf_token %}
+                    <!-- to error: add class "has-danger" -->
+                    <div class="form-group">
+                        <label for="exampleInputEmail1">Username</label>
+                        <input type="text" name="username" class="form-control form-control-sm" id="exampleInputEmail1" aria-describedby="emailHelp">
                     </div>
-                </div>
-  
-                <div class="row justify-content-center pb-5" id="regform" style="display: none;">
-                  <div class="col-md-6">
-                    <form>
-                      <div class="mb-3">
-                        <label for="contactName" class="form-label">Bedrijfsnaam</label>
-                        <input type="text" class="form-control" id="contactName">
-                      </div>
-                <div class="mb-3">
-                      <label for="contactPerson" class="form-label">Contant Persoon</label>
-                      <input type="text" class="form-control" id="contactPerson">
+                    <div class="form-group">
+                        <label for="exampleInputPassword1">Password</label>
+                        <a href="#" style="float:right;font-size:12px;">Forgot password?</a>
+                        <input type="password" name="password" class="form-control form-control-sm" id="exampleInputPassword1">
                     </div>
-                    
-                    <div class="mb-3">
-                        <label for="phonenumber" class="form-label">Telefoon</label>
-                        <input type="number" class="form-control" name="telephone" id="phonenumber">
-                      </div>
-                      <div class="mb-3">
-                        <label for="email" class="form-label">Mail</label>
-                        <input type="text" class="form-control" name="email" id="email">
-                      </div>
-                      <div class="mb-3">
-                        <label for="contactCity" class="form-label">Stad</label>
-                        <input type="text" class="form-control" id="contactCity">
-                      </div>
-                      <div class="mb-3">
-                        <label for="contactaddress" class="form-label">Straat</label>
-                        <input type="text" class="form-control" id="contactaddress">
-                      </div>
-                      <div class="mb-3">
-                        <label for="postcode" class="form-label">Postcode</label>
-                        <input type="text" class="form-control" id="postcode">
-                      </div>
-                      <div class="mb-3">
-                        <label for="website" class="form-label">Website</label>
-                        <input type="url" class="form-control" name="website" id="website">
-                      </div>
-                      <div class="mb-3">
-                        <label for="kvk" class="form-label">KVK</label>
-                        <input type="text" class="form-control" name="kvk" id="kvk">
-                      </div>
-                    <div class="text-center">
-                        <button type="submit" name="submit" class="btn btn-warning my-1">Aanmelden</button>
+                    <button type="submit" class="btn btn-primary btn-block">Sign in</button>
+
+                    <div class="sign-up">
+                        Don't have an account? <a href="{% url 'register_attempt' %}">Create One</a>
                     </div>
-                  </form>
-                  </div>
-              </div>
-                </div>
+                </form>
             </div>
         </div>
-        <!-- <div class="row main">
-            <div class="col card">
-                <div class="card-body">
-                    <div class="card-body-top">
-                        <button id="login" class="btn" name="login" onclick="login()">login</button>
-                        <button id="register" class="btn" name="register" onclick="register()">register</button>
-                        <div id="pointer-btn"></div>
-                    </div>
-                    <div class="card-body-login text-left">
-                        <form id="login-form">
-                            <div class="mb-3">
-                                <label for="email" class="form-label">Email</label>
-                                <input type="email" class="form-control" name="email" id="email">
-                              </div>
-                              <div class="mb-3">
-                                <label for="password" class="form-label">Password</label>
-                                <input type="text" class="form-control" id="password">
-                              </div>
-                              <div class="mb-3 form-check">
-                                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                                <label class="form-check-label" for="exampleCheck1">Remember Me</label>
-                              </div>
-                            <div class="">
-                                <button type="submit" name="submit" class="btn btn-success my-1">Log In</button>
-                                <a href="" class="text-decoration-none">Forgot Password?</a>
-                            </div>
-                        </form>
-                        <form id="register-form">
-                            <input class="input-form" type="name" placeholder="Enter your full name" required><br><br>
-                            <input class="input-form" type="email" placeholder="Enter your email" required><br><br>
-                            <input class="input-form" type="password" placeholder="Enter your password" required><br><br>
-                            <input class="submit-form" type="submit" value="Register">
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div> -->
-      <div class="row pt-3 fw-bold text-center">
+    </div>
+    </div>
+
+
+    {% endblock %}
+  
+
         <p>Copyright © 2022 Workconnect | Powered by Pagie Portal</p>
       </div>
     </div>

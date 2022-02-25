@@ -7,5 +7,11 @@ urlpatterns = [
     path('adduser', views.adduser, name = 'adduser'),
     path('overons', views.overons, name = 'overons'),
     path('login', views.login, name='login'),
+    path('form', views.form),
+    path('business', views.business, name='business'),
+    path('index', views.index, name='index'),
+    path('profile', views.profile, name='profile'),
+    path('create', views.create, name='create'),
+    path('page', views.page, name='page'),
 
 ]
