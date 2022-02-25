@@ -1,0 +1,967 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'progress/progresscircle.css' %}">
+    <title>Profile Page</title>
+  </head>
+    <div class="container">
+      <div class="row">
+        <div class="col-md-2">
+          <img
+            src="{% static 'images/person.svg'%}"
+            alt=""
+            class="img-fluid img-circle"
+            style="width: 200px"
+          />
+        </div>
+        <div class="col-md-7">
+          <h2 class="py-5">Soulaiman Bakkali</h2>
+        </div>
+        <div class="col-md-3 box">
+          <div class="circlechart mt-4" 
+              data-percentage="50">
+              
+          </div>
+          <!-- <div class="rounded-circle mt-3" style="display: flex; justify-content: center; align-items: center; position: relative; height: 100px; width: 100px; background-color: yellowgreen; border: 10px solid black; ">
+            <div class="value " style="position: relative; display: flex; justify-content: center; align-items: center; color: #fff;">0 %</div>
+          </div> -->
+        </div>
+      </div>
+      <div class="row bg-light">
+        <h5>Persoonlijke informatie</h5>
+        <div class="col-md-7">
+          <h2>CONTACTGEGEVENS</h2>
+        </div>
+        <div class="col-md-5">
+          <h6>Je persoonlijke gegevens zijn niet zichtbaar voor derden</h6>
+        </div>
+        <div class="col">
+          <button
+            type="button"
+            class="btn btn-light text-primary float-end"
+            data-bs-toggle="modal"
+            data-bs-target="#exampleModal"
+          >
+            Edit
+          </button>
+
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="exampleModal"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="row justify-content-center p-3">
+                    <div class="col-6">
+                      <div class="row py-1">
+                        <div class="col-5"><h5>Voornaam</h5></div>
+                        <div class="col-7">
+                          <div class="mb-3">
+                            <input type="text" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-5"><h5>Achternaam</h5></div>
+                        <div class="col-7">
+                          <div class="mb-3">
+                            <input type="text" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-5"><h5>Bedrijfsnaam</h5></div>
+                        <div class="col-7">
+                          <div class="mb-3">
+                            <input type="text" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-5"><h5>KVK nummer</h5></div>
+                        <div class="col-7">
+                          <div class="mb-3">
+                            <input type="text" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+
+                      <!-- Modal -->
+                      <div
+                        class="modal fade"
+                        id="exampleModal"
+                        data-bs-backdrop="static"
+                        tabindex="-1"
+                        aria-labelledby="exampleModalLabel"
+                        aria-hidden="true"
+                      >
+                        <div
+                          class="modal-dialog modal-lg modal-dialog-centered"
+                        >
+                          <div class="modal-content">
+                            <div class="modal-header">
+                              <h5 class="modal-title" id="exampleModalLabel">
+                                Modal title
+                              </h5>
+                              <button
+                                type="button"
+                                class="btn-close"
+                                data-bs-dismiss="modal"
+                                aria-label="Close"
+                              ></button>
+                            </div>
+                            <div class="modal-body"></div>
+                            <div class="modal-footer">
+                              <button
+                                type="button"
+                                class="btn btn-secondary"
+                                data-bs-dismiss="modal"
+                              >
+                                Close
+                              </button>
+                              <button type="button" class="btn btn-primary">
+                                Save changes
+                              </button>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="col-4">
+                      <div class="row py-1">
+                        <div class="col-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-telephone-fill"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              fill-rule="evenodd"
+                              d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                            />
+                          </svg>
+                        </div>
+                        <div class="col-10">
+                          <div class="mb-3">
+                            <input type="text" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-at"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
+                            />
+                          </svg>
+                        </div>
+                        <div class="col-10">
+                          <div class="mb-3">
+                            <input type="email" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-linkedin"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                            />
+                          </svg>
+                        </div>
+                        <div class="col-10">
+                          <div class="mb-3">
+                            <input type="url" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                      <div class="row py-1">
+                        <div class="col-1">
+                          <svg
+                            xmlns="http://www.w3.org/2000/svg"
+                            width="16"
+                            height="16"
+                            fill="currentColor"
+                            class="bi bi-globe"
+                            viewBox="0 0 16 16"
+                          >
+                            <path
+                              d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"
+                            />
+                          </svg>
+                        </div>
+                        <div class="col-10">
+                          <div class="mb-3">
+                            <input type="url" class="form-control" id="" />
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Annuleren
+                  </button>
+                  <button type="button" class="btn btn-primary">Opslaan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="row bg-light justify-content-center p-3 mb-5">
+        <div class="col-md-6">
+          <div class="row py-1">
+            <div class="col-4"><h5>Voornaam</h5></div>
+            <div class="col-8"><h6>Soulaiman</h6></div>
+          </div>
+          <div class="row py-1">
+            <div class="col-4"><h5>Achternaam</h5></div>
+            <div class="col-8"><h6>Bakkali</h6></div>
+          </div>
+          <div class="row py-1">
+            <div class="col-4"><h5>Bedrijfsnaam</h5></div>
+            <div class="col-8">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-light text-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                + toevoegen
+              </button>
+            </div>
+          </div>
+          <div class="row py-1">
+            <div class="col-4"><h5>KVK nummer</h5></div>
+            <div class="col-8">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-light text-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                + toevoegen
+              </button>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="row py-1">
+            <div class="col-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-telephone-fill"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  fill-rule="evenodd"
+                  d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"
+                />
+              </svg>
+            </div>
+            <div class="col-8">+31636289948</div>
+          </div>
+          <div class="row py-1">
+            <div class="col-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-at"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M13.106 7.222c0-2.967-2.249-5.032-5.482-5.032-3.35 0-5.646 2.318-5.646 5.702 0 3.493 2.235 5.708 5.762 5.708.862 0 1.689-.123 2.304-.335v-.862c-.43.199-1.354.328-2.29.328-2.926 0-4.813-1.88-4.813-4.798 0-2.844 1.921-4.881 4.594-4.881 2.735 0 4.608 1.688 4.608 4.156 0 1.682-.554 2.769-1.416 2.769-.492 0-.772-.28-.772-.76V5.206H8.923v.834h-.11c-.266-.595-.881-.964-1.6-.964-1.4 0-2.378 1.162-2.378 2.823 0 1.737.957 2.906 2.379 2.906.8 0 1.415-.39 1.709-1.087h.11c.081.67.703 1.148 1.503 1.148 1.572 0 2.57-1.415 2.57-3.643zm-7.177.704c0-1.197.54-1.907 1.456-1.907.93 0 1.524.738 1.524 1.907S8.308 9.84 7.371 9.84c-.895 0-1.442-.725-1.442-1.914z"
+                />
+              </svg>
+            </div>
+            <div class="col-8">bakkalisoulaiman@hotmail.com</div>
+          </div>
+          <div class="row py-1">
+            <div class="col-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-linkedin"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 1.146C0 .513.526 0 1.175 0h13.65C15.474 0 16 .513 16 1.146v13.708c0 .633-.526 1.146-1.175 1.146H1.175C.526 16 0 15.487 0 14.854V1.146zm4.943 12.248V6.169H2.542v7.225h2.401zm-1.2-8.212c.837 0 1.358-.554 1.358-1.248-.015-.709-.52-1.248-1.342-1.248-.822 0-1.359.54-1.359 1.248 0 .694.521 1.248 1.327 1.248h.016zm4.908 8.212V9.359c0-.216.016-.432.08-.586.173-.431.568-.878 1.232-.878.869 0 1.216.662 1.216 1.634v3.865h2.401V9.25c0-2.22-1.184-3.252-2.764-3.252-1.274 0-1.845.7-2.165 1.193v.025h-.016a5.54 5.54 0 0 1 .016-.025V6.169h-2.4c.03.678 0 7.225 0 7.225h2.4z"
+                />
+              </svg>
+            </div>
+            <div class="col-8">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-light text-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                + toevoegen
+              </button>
+            </div>
+          </div>
+          <div class="row py-1">
+            <div class="col-1">
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="16"
+                height="16"
+                fill="currentColor"
+                class="bi bi-globe"
+                viewBox="0 0 16 16"
+              >
+                <path
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm7.5-6.923c-.67.204-1.335.82-1.887 1.855A7.97 7.97 0 0 0 5.145 4H7.5V1.077zM4.09 4a9.267 9.267 0 0 1 .64-1.539 6.7 6.7 0 0 1 .597-.933A7.025 7.025 0 0 0 2.255 4H4.09zm-.582 3.5c.03-.877.138-1.718.312-2.5H1.674a6.958 6.958 0 0 0-.656 2.5h2.49zM4.847 5a12.5 12.5 0 0 0-.338 2.5H7.5V5H4.847zM8.5 5v2.5h2.99a12.495 12.495 0 0 0-.337-2.5H8.5zM4.51 8.5a12.5 12.5 0 0 0 .337 2.5H7.5V8.5H4.51zm3.99 0V11h2.653c.187-.765.306-1.608.338-2.5H8.5zM5.145 12c.138.386.295.744.468 1.068.552 1.035 1.218 1.65 1.887 1.855V12H5.145zm.182 2.472a6.696 6.696 0 0 1-.597-.933A9.268 9.268 0 0 1 4.09 12H2.255a7.024 7.024 0 0 0 3.072 2.472zM3.82 11a13.652 13.652 0 0 1-.312-2.5h-2.49c.062.89.291 1.733.656 2.5H3.82zm6.853 3.472A7.024 7.024 0 0 0 13.745 12H11.91a9.27 9.27 0 0 1-.64 1.539 6.688 6.688 0 0 1-.597.933zM8.5 12v2.923c.67-.204 1.335-.82 1.887-1.855.173-.324.33-.682.468-1.068H8.5zm3.68-1h2.146c.365-.767.594-1.61.656-2.5h-2.49a13.65 13.65 0 0 1-.312 2.5zm2.802-3.5a6.959 6.959 0 0 0-.656-2.5H12.18c.174.782.282 1.623.312 2.5h2.49zM11.27 2.461c.247.464.462.98.64 1.539h1.835a7.024 7.024 0 0 0-3.072-2.472c.218.284.418.598.597.933zM10.855 4a7.966 7.966 0 0 0-.468-1.068C9.835 1.897 9.17 1.282 8.5 1.077V4h2.355z"
+                />
+              </svg>
+            </div>
+            <div class="col-8">
+              <!-- Button trigger modal -->
+              <button
+                type="button"
+                class="btn btn-light text-primary"
+                data-bs-toggle="modal"
+                data-bs-target="#exampleModal"
+              >
+                + toevoegen
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+      <h2 class="my-3">INTRODUCTION</h2>
+      <div class="row bg-light">
+          <div class="row">
+              <div class="col py-1">
+                <button
+                type="button"
+                class="btn btn-light text-primary float-end"
+                data-bs-toggle="modal"
+                data-bs-target="#introModal"
+              >
+                Edit
+              </button>
+              </div>
+          </div>
+        <div class="col p-5">
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-light text-primary"
+            data-bs-toggle="modal"
+            data-bs-target="#introModal"
+          >
+            + add
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="introModal"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="row justify-content-center p-3">
+                    <div class="col">
+                      <div class="row py-1">
+                        <textarea
+                          class="form-control"
+                          placeholder="Tell us about your strengths and career aspirations to make it easier for employers to find you and help you take the next step in your career."
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Annuleren
+                  </button>
+                  <button type="button" class="btn btn-primary">Opslaan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <h2 class="my-3">CURRICULUM VITAE</h2>
+      <div class="row bg-light">
+          <div class="row">
+              <div class="col py-1">
+                <button
+                type="button"
+                class="btn btn-light text-primary float-end"
+                data-bs-toggle="modal"
+                data-bs-target="#summaryModal"
+              >
+                Edit
+              </button>
+              </div>
+          </div>
+        <div class="col px-5">
+            <h3>Summary</h3>
+            <p class="pt-5">Relevant information for future employers.</p>
+          <!-- Button trigger modal -->
+          <button
+            type="button"
+            class="btn btn-light text-primary pb-4"
+            data-bs-toggle="modal"
+            data-bs-target="#summaryModal"
+          >
+            + add
+          </button>
+          <!-- Modal -->
+          <div
+            class="modal fade"
+            id="summaryModal"
+            data-bs-backdrop="static"
+            tabindex="-1"
+            aria-labelledby="exampleModalLabel"
+            aria-hidden="true"
+          >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="row justify-content-center p-3">
+                    <div class="col">
+                      <div class="row py-1">
+                        <textarea
+                          class="form-control"
+                          placeholder="Description"
+                        ></textarea>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                    type="button"
+                    class="btn btn-secondary"
+                    data-bs-dismiss="modal"
+                  >
+                    Annuleren
+                  </button>
+                  <button type="button" class="btn btn-primary">Opslaan</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <hr>
+
+        <div class="row">
+            <div class="col py-1">
+              <button
+              type="button"
+              class="btn btn-light text-primary float-end"
+              data-bs-toggle="modal"
+              data-bs-target="#experienceModal"
+            >
+              Edit
+            </button>
+            </div>
+        </div>
+      <div class="col px-5">
+          <h3>Work experience</h3>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-light text-primary pb-4"
+          data-bs-toggle="modal"
+          data-bs-target="#experienceModal"
+        >
+          + add
+        </button>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="experienceModal"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="row justify-content-center p-3">
+                  <div class="col">
+                    <div class="row py-1">
+                      <h5>Period</h5>
+                      <div class="col-auto">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>Month</option>
+                          <option value="">Jan</option>
+                          <option value="">Feb</option>
+                          <option value="">Mar</option>
+                          <option value="">Apr</option>
+                          <option value="">May</option>
+                          <option value="">Jun</option>
+                          <option value="">Jul</option>
+                          <option value="">Aug</option>
+                          <option value="">Sep</option>
+                          <option value="">Oct</option>
+                          <option value="">Nov</option>
+                          <option value="">Dec</option>
+                        </select>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>Year</option>
+                          <option value="">2022</option>
+                          <option value="">2021</option>
+                          <option value="">2020</option>
+                          <option value="">2019</option>
+                          <option value="">2018</option>
+                          <option value="">2017</option>
+                          <option value="">2016</option>
+                          <option value="">2015</option>
+                          <option value="">2014</option>
+                          <option value="">2013</option>
+                          <option value="">2012</option>
+                          <option value="">2011</option>
+                        </select>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>Month</option>
+                          <option value="">Jan</option>
+                          <option value="">Feb</option>
+                          <option value="">Mar</option>
+                          <option value="">Apr</option>
+                          <option value="">May</option>
+                          <option value="">Jun</option>
+                          <option value="">Jul</option>
+                          <option value="">Aug</option>
+                          <option value="">Sep</option>
+                          <option value="">Oct</option>
+                          <option value="">Nov</option>
+                          <option value="">Dec</option>
+                        </select>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>Year</option>
+                          <option value="">2022</option>
+                          <option value="">2021</option>
+                          <option value="">2020</option>
+                          <option value="">2019</option>
+                          <option value="">2018</option>
+                          <option value="">2017</option>
+                          <option value="">2016</option>
+                          <option value="">2015</option>
+                          <option value="">2014</option>
+                          <option value="">2013</option>
+                          <option value="">2012</option>
+                          <option value="">2011</option>
+                        </select>
+                      </div>
+                      <div class="col-auto pt-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          I still work here
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputOrg" class="form-label">Orgnisation</label>
+                      <input type="text" class="form-control" id="exampleInputOrg" placeholder="Orgnisation">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputAssig" class="form-label">Assignment Description</label>
+                      <input type="text" class="form-control" id="exampleInputAssig" placeholder="Assignment Description">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputDesc" class="form-label">Description</label>
+                      <textarea
+                          class="form-control" id="exampleInputDesc"
+                          placeholder="Description"
+                        ></textarea>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Annuleren
+                </button>
+                <button type="button" class="btn btn-primary">Opslaan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+      <hr>
+
+        <div class="row ">
+            <div class="col py-1">
+              <button
+              type="button"
+              class="btn btn-light text-primary float-end"
+              data-bs-toggle="modal"
+              data-bs-target="#eductionModal"
+            >
+              Edit
+            </button>
+            </div>
+        </div>
+      <div class="col px-5">
+          <h3>Education</h3>
+        <!-- Button trigger modal -->
+        <button
+          type="button"
+          class="btn btn-light text-primary pb-4"
+          data-bs-toggle="modal"
+          data-bs-target="#eductionModal"
+        >
+          + add training / eductaion
+        </button>
+        <!-- Modal -->
+        <div
+          class="modal fade"
+          id="eductionModal"
+          data-bs-backdrop="static"
+          tabindex="-1"
+          aria-labelledby="exampleModalLabel"
+          aria-hidden="true"
+        >
+          <div class="modal-dialog modal-lg modal-dialog-centered">
+            <div class="modal-content">
+              <div class="modal-body">
+                <div class="row justify-content-center p-3">
+                  <div class="col">
+                    <div class="row py-1">
+                      <h5>Period</h5>
+                      <div class="col-auto">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>Month</option>
+                          <option value="">Jan</option>
+                          <option value="">Feb</option>
+                          <option value="">Mar</option>
+                          <option value="">Apr</option>
+                          <option value="">May</option>
+                          <option value="">Jun</option>
+                          <option value="">Jul</option>
+                          <option value="">Aug</option>
+                          <option value="">Sep</option>
+                          <option value="">Oct</option>
+                          <option value="">Nov</option>
+                          <option value="">Dec</option>
+                        </select>
+                      </div>
+                      <div class="col-auto">
+                        <select class="form-select form-select-lg mb-3" aria-label=".form-select-lg example">
+                          <option selected>Year</option>
+                          <option value="">2022</option>
+                          <option value="">2021</option>
+                          <option value="">2020</option>
+                          <option value="">2019</option>
+                          <option value="">2018</option>
+                          <option value="">2017</option>
+                          <option value="">2016</option>
+                          <option value="">2015</option>
+                          <option value="">2014</option>
+                          <option value="">2013</option>
+                          <option value="">2012</option>
+                          <option value="">2011</option>
+                        </select>
+                      </div>
+                      <div class="col-auto pt-2">
+                        <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                        <label class="form-check-label" for="flexCheckDefault">
+                          Still in progress
+                        </label>
+                      </div>
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputOrg" class="form-label">School</label>
+                      <input type="text" class="form-control" id="exampleInputOrg" placeholder="Name of school">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputAssig" class="form-label">Qualification</label>
+                      <input type="text" class="form-control" id="exampleInputAssig" placeholder="Qualification">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputAssig" class="form-label">Education</label>
+                      <input type="text" class="form-control" id="exampleInputAssig" placeholder="Education">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputDesc" class="form-label">Description</label>
+                      <textarea
+                          class="form-control" id="exampleInputDesc"
+                          placeholder="Description"
+                        ></textarea>
+                      </div>
+                  </div>
+                </div>
+              </div>
+              <div class="modal-footer">
+                <button
+                  type="button"
+                  class="btn btn-secondary"
+                  data-bs-dismiss="modal"
+                >
+                  Annuleren
+                </button>
+                <button type="button" class="btn btn-primary">Opslaan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+
+      <hr>
+
+        <div class="row px-5">
+          <h3>Laguages</h3>
+            <div class="col-12 py-1">
+              <span>Masterd Languages</span>
+              <button
+              type="button"
+              class="btn btn-light text-primary float-end"
+              data-bs-toggle="modal"
+              data-bs-target="#languagesModal"
+            >
+              Edit
+            </button>
+            <!-- Modal -->
+            <div
+            class="modal fade"
+            id="languagesModal" data-bs-backdrop="static" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true" >
+            <div class="modal-dialog modal-lg modal-dialog-centered">
+              <div class="modal-content">
+                <div class="modal-body">
+                  <div class="row justify-content-center p-3">
+                    <div class="col">
+                      <div class="row py-1">
+                        <div class="mb-1">
+                          <select class="form-select" aria-label="Default select example">
+                            <option selected>Languages</option>
+                            <option value="">Dutch</option>
+                            <option value="">French</option>
+                            <option value="">English</option>
+                            <option value="">German</option>
+                            <option value="">Italian</option>
+                            <option value="">Spanish</option>
+                            <option value="">Russion</option>
+                            <option value="">Turkish</option>
+                            <option value="">Chinese</option>
+                          </select>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="modal-footer">
+                  <button
+                  type="button" class="btn btn-secondary" data-bs-dismiss="modal" >
+                  Annuleren
+                </button>
+                <button type="button" class="btn btn-primary">Opslaan</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="col-12 py-1">
+        <span>More Details</span>
+        <button
+        type="button"
+        class="btn btn-light text-primary float-end"
+        data-bs-toggle="modal"
+        data-bs-target="#detailsModal"
+        >
+        Edit
+      </button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="detailsModal"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="row justify-content-center p-3">
+                <div class="col">
+                  <div class="row py-1">
+                    <div class="mb-1">
+                      <textarea
+                          class="form-control" id="exampleInputDesc"
+                          placeholder="More details"
+                        ></textarea>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Annuleren
+              </button>
+              <button type="button" class="btn btn-primary">Opslaan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <!-- Other Details-->
+  <hr>
+    <div class="row px-5">
+      <h3>Other Details</h3>
+      <div class="col-12 py-1">
+        <button
+        type="button"
+        class="btn btn-light text-primary float-end"
+        data-bs-toggle="modal"
+        data-bs-target="#otherDetailsModal"
+        >
+        Edit
+      </button>
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="otherDetailsModal"
+        data-bs-backdrop="static"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+        >
+        <div class="modal-dialog modal-lg modal-dialog-centered">
+          <div class="modal-content">
+            <div class="modal-body">
+              <div class="row justify-content-center p-3">
+                <div class="col">
+                  <div class="row py-1">
+                    <div class="mb-1">
+                      <textarea
+                          class="form-control" id="exampleInputDesc"
+                          placeholder="Other details"
+                        ></textarea>
+                      </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="modal-footer">
+              <button
+                type="button"
+                class="btn btn-secondary"
+                data-bs-dismiss="modal"
+              >
+                Annuleren
+              </button>
+              <button type="button" class="btn btn-primary">Opslaan</button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    </div>
+
+</div>
+<!-- Upload Cv  -->
+<div class="row bg-light my-5">
+  <div class="col p-5">
+    <h5>CV not available.</h5>
+    <p>Upload your CV (Word doc, editable PDF file) here. Jellow will ensure that all information is made available in your profile. You can also import your CV yourself.</p>
+    <div class="text-center">
+      <input type="file" name="" id="file" style="display: none;">
+      <label for="file" class="btn btn-primary">Upload CV</label>
+  </div>
+</div>
+</div>
+</div>
+    <!-- Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" 
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" 
+        crossorigin="anonymous">
+</script>
+<script src="{% static 'progress/progresscircle.js' %}"></script>
+<script>
+  $(function(){
+
+$('.circlechart').circlechart();
+
+});
+</script>
+  </body>
+</html>

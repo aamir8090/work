@@ -1,0 +1,16 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    overflow: hidden;
+}
+#multistepform fieldset:not(:first-of-type) {
+    display: none;
+}
+.next,.submit{
+margin-top: 20px;
+float: right;
+}
+.previous{
+margin-top: 20px;
+}
